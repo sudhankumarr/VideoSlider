@@ -1,0 +1,16 @@
+mixin slide-controls(content)
+
+    //- Available parameters:
+        class = selector value // optional comment here
+
+    - var content = content || {};
+    - content.class = content.class || "";
+    - content.href = content.href || "#";
+
+    // START: a060-slide-controls
+    .slide-controls(class=content.class)
+        a(href=content.href).prev
+            <i class="icon"> < </i>
+        a(href=content.href).next
+            <i class="icon"> > </i>
+    // END: a060-slide-controls

@@ -1,0 +1,32 @@
+mixin video-player(content)
+
+    //- Available parameters:
+        class = selector value
+        videoClass = class for video tag
+        videoId = Id for video tag
+        video = video name with extension
+        videoType = type of video
+        img = img name with extension
+        preload = preload of video
+        dataSetup = to initializing the player automatically
+
+    - var content = content || {};
+    - content.class = content.class || "";
+    - content.videoClass = content.videoClass || "";
+    - content.videoId = content.videoId || "";
+    - content.video = content.video || "";
+    - content.videoType = content.videoType || "";
+    - content.img = content.img || "";
+    - content.width = content.width || "300";
+    - content.height = content.height || "200";
+    - content.preload = content.preload || "";
+    - content.dataSetup = content.dataSetup || "";
+
+    // START: a054-video-player
+
+    .video-player(class=[content.class])
+        video(id=content.videoId, class=content.videoClass, width=content.width, height=content.height, controls,preload=content.preload, poster="./images/"+content.img, data-setup=content.dataSetup)&attributes(attributes)
+            source(src="./videos/"+content.video,type=content.videoType)
+            if block
+                block
+    // END: a054-video-player

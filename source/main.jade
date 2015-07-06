@@ -1,0 +1,24 @@
+include video-overflow-slider.jade
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		title VIDEO OVERFLOW SLIDER
+		link(href="styles/vendor/video-js/video-js.css",rel="stylesheet")
+		link(href="styles/main.css",rel="stylesheet")
+	body
+		+video-overflow-slider({slider:[{videoId: "example_video_1",video: "sample.mp4",videoType:"video/mp4", img:"image_for_video.jpg"},
+								{videoId: "example_video_2",video: "sample.mp4",videoType:"video/mp4", img:"image2_for_video.jpg"},
+								{videoId: "example_video_3",video: "sample.mp4",videoType:"video/mp4", img:"image_for_video.jpg"},
+								{videoId: "example_video_4",video: "sample.mp4",videoType:"video/mp4", img:"image2_for_video.jpg"},
+								{videoId: "example_video_5",video: "sample.mp4",videoType:"video/mp4", img:"image_for_video.jpg"},
+								{videoId: "example_video_6",video: "sample.mp4",videoType:"video/mp4", img:"image2_for_video.jpg"},
+								{videoId: "example_video_7",video: "sample.mp4",videoType:"video/mp4", img:"image_for_video.jpg"},
+								{videoId: "example_video_8",video: "sample.mp4",videoType:"video/mp4", img:"image2_for_video.jpg"},
+								{videoId: "example_video_9",video: "sample.mp4",videoType:"video/mp4", img:"image_for_video.jpg"},
+								{videoId: "example_video_10",video: "sample.mp4",videoType:"video/mp4", img:"image2_for_video.jpg"}
+							 ],headerText: "demo videos", linkText: "view all videos",colorClass:"font-gray",fontClass: "secondary"})
+		script(src="scripts/vendor/jquery.js")
+		script(src="scripts/vendor/video.js")
+		script(src="scripts/main.js")

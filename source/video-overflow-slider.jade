@@ -1,0 +1,34 @@
+mixin video-overflow-slider(content)
+
+    //- Available parameters:
+        class  =  selector value
+        slider =  array that contains similar objects.
+                  Each object contains video-player attributes
+
+    - var content = content || {};
+    - content.class = content.class || "";
+    - content.slider = content.slider || [];
+    - content.headerText = content.headerText || "";
+    - content.linkText = content.linkText || "";
+    - content.colorClass = content.colorClass || "";
+    - content.fontClass = content.fontClass || "";
+
+    // START: o011-video-overflow-slider
+    include video-player.jade
+    include slide-controls.jade
+
+    .video-overflow-slider(class=content.class)
+        .video-slider-header.clearfix
+            h2(class="dark") #{content.headerText}
+        .videos
+            .scroll
+                .slider-row
+                    if block
+                        block
+                    else
+                        each slider,i in content.slider
+                            .item
+                                +video-player({videoId: slider.videoId, video: slider.video, videoType: slider.videoType, width:"100%",height:"100%",preload:"auto",img: slider.img, dataSetup: {"example_option":true},videoClass: "video-js vjs-default-skin vjs-paused vjs-controls-enabled vjs-user-inactive vjs-big-play-centered"})
+            +slide-controls()
+
+    // END: o011-video-overflow-slider

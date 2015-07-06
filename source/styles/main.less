@@ -1,0 +1,23 @@
+// Apply a natural box layout model to all elements
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+  	content: " ";
+}
+.clearfix:after {
+	clear: both;
+}
+
+@import '_variables.less';
+@import '_video-player.less';
+@import '_video-slider.less';
+@import '_slide-controls.less';

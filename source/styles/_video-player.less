@@ -1,0 +1,25 @@
+.video-player {
+	width: 298px;
+	height: 197px;
+	// overriden css
+	.vjs-default-skin .vjs-big-play-button::before {
+		font-size: 50px;
+		bottom: 20px;
+		left: 5px;
+	}
+	.vjs-default-skin .vjs-big-play-button {
+		width: 3em;
+		height: 3em;
+		border-radius: 50%;
+		background-color: @black;
+		border-color: @white;
+		color: @white;
+		opacity: 0.6;
+		filter: alpha(opacity=60);
+		margin-left: -1.5em;
+		margin-top: -1.4em;
+	}
+	.video-js .vjs-tech {
+		height: auto;
+	}
+}
